@@ -1,6 +1,6 @@
 export default {
   async fetch(request, env, ctx) {
-    const { eventsTech1, eventsTech2, duration, dateToCheck, dayOfWeek } = await request.json();
+    const { eventsLashMania1, eventsLashMania2, duration, dateToCheck, dayOfWeek } = await request.json();
 
     const workingHours = {
       monday: { start: "08:00", end: "19:00" },
@@ -52,8 +52,8 @@ export default {
       return freeSlots;
     };
 
-    const slots1 = generateTimeSlots(eventsTech1, duration, dateToCheck, dayOfWeek);
-    const slots2 = generateTimeSlots(eventsTech2, duration, dateToCheck, dayOfWeek);
+    const slots1 = generateTimeSlots(eventsLashMania1, duration, dateToCheck, dayOfWeek);
+    const slots2 = generateTimeSlots(eventsLashMania2, duration, dateToCheck, dayOfWeek);
 
     const pickBalanced = (s1, s2) => {
       const combined = [];
